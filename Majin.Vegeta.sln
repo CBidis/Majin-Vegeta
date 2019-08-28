@@ -1,17 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{FCCB8CB4-9DE4-47A4-8969-1F1D8B719345}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FCB9512D-BB58-4E95-8B72-D0B0B0F95B31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Open.Api.ParserTests", "Tests\MS.Open.Api.ParserTests\MS.Open.Api.ParserTests.csproj", "{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Open.Api.ParserTests", "Tests\MS.Open.Api.ParserTests\MS.Open.Api.ParserTests.csproj", "{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majin.Vegeta.Transformations", "Majin.Vegeta.Transformations\Majin.Vegeta.Transformations.csproj", "{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Majin.Vegeta.Transformations", "Majin.Vegeta.Transformations\Majin.Vegeta.Transformations.csproj", "{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majin.Vegeta.Build", "Majin.Vegeta.Build\Majin.Vegeta.Build.csproj", "{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Majin.Vegeta.Build", "Majin.Vegeta.Build\Majin.Vegeta.Build.csproj", "{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{91F19EDC-9333-46A9-BEC6-BE55DDE7536E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majin.Vegeta.Electronified", "Majin.Vegeta.Electronified\Majin.Vegeta.Electronified.csproj", "{B29D1A34-4291-4543-ABDF-0221B62C8954}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B29D1A34-4291-4543-ABDF-0221B62C8954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29D1A34-4291-4543-ABDF-0221B62C8954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29D1A34-4291-4543-ABDF-0221B62C8954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29D1A34-4291-4543-ABDF-0221B62C8954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +47,7 @@ Global
 		{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003} = {FCB9512D-BB58-4E95-8B72-D0B0B0F95B31}
 		{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388} = {FCCB8CB4-9DE4-47A4-8969-1F1D8B719345}
 		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C} = {FCCB8CB4-9DE4-47A4-8969-1F1D8B719345}
+		{B29D1A34-4291-4543-ABDF-0221B62C8954} = {91F19EDC-9333-46A9-BEC6-BE55DDE7536E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DCE4ACA-2EA5-455C-B702-A948BA374D3D}
