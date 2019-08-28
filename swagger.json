@@ -1,0 +1,1507 @@
+{
+  "x-generator": "NSwag v12.1.0.0 (NJsonSchema v9.13.28.0 (Newtonsoft.Json v12.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "MDI API",
+    "description": "Mellon Digital Identification Web API",
+    "contact": {
+      "name": "Christos Charalambidis",
+      "url": "https://mellongroup.com/",
+      "email": "c.charalambidis@mellongroup.com"
+    },
+    "license": {
+      "name": "Use under MLICX",
+      "url": "https://mellongroup.com/api/license"
+    },
+    "version": "V1"
+  },
+  "host": "localhost:44315",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/auth": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "Auth_GetAuthToken",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "clientId",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "clientSecret",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/documentsign/registeruser": {
+      "post": {
+        "tags": [
+          "DocumentSign"
+        ],
+        "operationId": "DocumentSign_RegisterUser",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegisterUserCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIRegisterUserRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/documentsign/otprequest": {
+      "post": {
+        "tags": [
+          "DocumentSign"
+        ],
+        "operationId": "DocumentSign_OtpRequestAsync",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OtpCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIOtpRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/documentsign/verifyuser": {
+      "post": {
+        "tags": [
+          "DocumentSign"
+        ],
+        "operationId": "DocumentSign_VerifyUser",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VerifyUserCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIVerifyOtpRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/documentsign/signdocument": {
+      "post": {
+        "tags": [
+          "DocumentSign"
+        ],
+        "operationId": "DocumentSign_SignDocument",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DocumentSignCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDISignDocumentRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/face/verify": {
+      "post": {
+        "tags": [
+          "Face"
+        ],
+        "operationId": "Face_VerifyFace",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FaceVerificationCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfFaceRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/id/verify": {
+      "post": {
+        "tags": [
+          "Id"
+        ],
+        "operationId": "Id_VerifyFace",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/IDVerificationCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIIDVerificationRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/ocr/results": {
+      "get": {
+        "tags": [
+          "Ocr"
+        ],
+        "operationId": "Ocr_DocumentResults",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "transactionId",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIDocumentResultRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/ocr/templates": {
+      "get": {
+        "tags": [
+          "Ocr"
+        ],
+        "operationId": "Ocr_GetTemplates",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfListOfMDIOcrTemplatesRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/ocr": {
+      "post": {
+        "tags": [
+          "Ocr"
+        ],
+        "operationId": "Ocr_DocumentUpload",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "documentUploadCommand",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/DocumentUploadCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIDocUploadRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/video/connect": {
+      "post": {
+        "tags": [
+          "Video"
+        ],
+        "operationId": "Video_CreateConnectionLink",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ConnectionLinkCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIConnectionLinkRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/video/connectinfo": {
+      "get": {
+        "tags": [
+          "Video"
+        ],
+        "operationId": "Video_GetConnectionLinkInfo",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "clientId",
+            "in": "query",
+            "x-nullable": true
+          },
+          {
+            "type": "string",
+            "name": "provider",
+            "in": "query",
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/MDIResponseOfMDIConnectionLinkRespDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/workflow/{id}": {
+      "get": {
+        "tags": [
+          "WorkFlow"
+        ],
+        "operationId": "WorkFlow_GetById",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "type": "boolean",
+            "name": "kycActions",
+            "in": "query",
+            "default": false,
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/WorkFlowViewDto"
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "WorkFlow"
+        ],
+        "operationId": "WorkFlow_Update",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "name": "dto",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WorkFlowEditDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "WorkFlow"
+        ],
+        "operationId": "WorkFlow_Patch",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "x-nullable": true
+          },
+          {
+            "name": "dto",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Operation"
+              }
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": ""
+          },
+          "204": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    },
+    "/api/workflow": {
+      "post": {
+        "tags": [
+          "WorkFlow"
+        ],
+        "operationId": "WorkFlow_Create",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "dto",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WorkFlowCreateDto"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "Bearer Token": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "MDIResponseOfMDIRegisterUserRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "executionTime"
+      ],
+      "properties": {
+        "data": {},
+        "executionTime": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "transactionId": {
+          "type": "string"
+        }
+      }
+    },
+    "RegisterUserCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfMDIRegisterUserRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/MDIRegisterUserDto"
+            }
+          }
+        }
+      ]
+    },
+    "MDIRegisterUserDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "emailAddress": {
+          "type": "string"
+        },
+        "telephone": {
+          "type": "string"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "MDICommandOfMDIRegisterUserRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "providerName": {
+          "type": "string"
+        },
+        "workFlowId": {
+          "type": "string"
+        }
+      }
+    },
+    "MDIResponseOfMDIOtpRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "OtpCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfMDIOtpRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/MDIOtpRequestDto"
+            }
+          }
+        }
+      ]
+    },
+    "MDIOtpRequestDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      }
+    },
+    "MDICommandOfMDIOtpRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfMDIVerifyOtpRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "VerifyUserCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfMDIVerifyOtpRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/MDIVerifyOtpDto"
+            }
+          }
+        }
+      ]
+    },
+    "MDIVerifyOtpDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "otp": {
+          "type": "string"
+        }
+      }
+    },
+    "MDICommandOfMDIVerifyOtpRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfMDISignDocumentRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DocumentSignCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfMDISignDocumentRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/MDISignDocumentDto"
+            }
+          }
+        }
+      ]
+    },
+    "MDISignDocumentDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "document": {
+          "type": "string"
+        },
+        "otp": {
+          "type": "string"
+        }
+      }
+    },
+    "MDICommandOfMDISignDocumentRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfFaceRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "FaceVerificationCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfFaceRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/FaceDto"
+            }
+          }
+        }
+      ]
+    },
+    "FaceDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checkQualityFace1",
+        "checkQualityFace2"
+      ],
+      "properties": {
+        "encodedFace1": {
+          "type": "string"
+        },
+        "encodedFace2": {
+          "type": "string"
+        },
+        "checkQualityFace1": {
+          "type": "boolean"
+        },
+        "checkQualityFace2": {
+          "type": "boolean"
+        }
+      }
+    },
+    "MDICommandOfFaceRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfMDIIDVerificationRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "IDVerificationCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfMDIIDVerificationRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/MDIIDVerificationReqDto"
+            }
+          }
+        }
+      ]
+    },
+    "MDIIDVerificationReqDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "document": {
+          "$ref": "#/definitions/MDIIDVDocumentDto"
+        },
+        "face": {
+          "$ref": "#/definitions/MDIIDVFaceDto"
+        }
+      }
+    },
+    "MDIIDVDocumentDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "doCropping": {
+          "type": "boolean"
+        },
+        "documentTypeSize": {
+          "type": "string"
+        },
+        "checkQuality": {
+          "type": "boolean"
+        },
+        "images": {
+          "$ref": "#/definitions/MDIIDVDocumentImagesDto"
+        }
+      }
+    },
+    "MDIIDVDocumentImagesDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "documentType"
+      ],
+      "properties": {
+        "documentType": {
+          "$ref": "#/definitions/DocumentType"
+        },
+        "frontPage": {
+          "type": "string"
+        },
+        "backPage": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentType": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "PDF",
+        "TIFF",
+        "JPG",
+        "PNG"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "MDIIDVFaceDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "image": {
+          "type": "string"
+        },
+        "checkQuality": {
+          "type": "boolean"
+        }
+      }
+    },
+    "MDICommandOfMDIIDVerificationRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfMDIDocumentResultRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfListOfMDIOcrTemplatesRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfMDIDocUploadRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DocumentUploadCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfMDIDocUploadRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/MDIDocUploadReqDto"
+            }
+          }
+        }
+      ]
+    },
+    "MDIDocUploadReqDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "templateId"
+      ],
+      "properties": {
+        "templateId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "documentType": {
+          "type": "string"
+        },
+        "documentBase64": {
+          "type": "string"
+        },
+        "ocrData": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "MDICommandOfMDIDocUploadRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "MDIResponseOfMDIConnectionLinkRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIResponse"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ConnectionLinkCommand": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDICommandOfMDIConnectionLinkRespDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/MDIConnectionLinkReqDto"
+            },
+            "agencyName": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "MDIConnectionLinkReqDto": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "validFrom": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "extraTransactions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "queue": {
+          "type": "string"
+        }
+      }
+    },
+    "MDICommandOfMDIConnectionLinkRespDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MDIRequest"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "WorkFlowViewDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseDtoOfString"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "workFlowStatus"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "transactions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransactionLogViewDto"
+              }
+            },
+            "workFlowData": {},
+            "workFlowStatus": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "workFlowDescription": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "TransactionLogViewDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseDtoOfString"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "executionTime",
+            "timeStamp"
+          ],
+          "properties": {
+            "provider": {
+              "type": "string"
+            },
+            "executedAction": {
+              "type": "string"
+            },
+            "workFlow": {
+              "$ref": "#/definitions/WorkFlowViewDto"
+            },
+            "customer": {
+              "$ref": "#/definitions/CustomerViewDto"
+            },
+            "request": {
+              "type": "string"
+            },
+            "response": {
+              "type": "string"
+            },
+            "executionTime": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "transactionStatus": {
+              "type": "string"
+            },
+            "timeStamp": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      ]
+    },
+    "CustomerViewDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseDtoOfInt64"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "providers": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProviderViewDto"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ProviderViewDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseDtoOfInt64"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "suggestedPricePerCall"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "suggestedPricePerCall": {
+              "type": "number",
+              "format": "double"
+            },
+            "serviceType": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "BaseDtoOfInt64": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "BaseDtoOfString": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "WorkFlowCreateDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCreateDto"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "workFlowData": {}
+          }
+        }
+      ]
+    },
+    "BaseCreateDto": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "WorkFlowEditDto": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEditDtoOfString"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "workFlowStatus"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "workFlowData": {},
+            "workFlowStatus": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "workFlowDescription": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "BaseEditDtoOfString": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseDtoOfString"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Operation": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OperationBase"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {}
+          }
+        }
+      ]
+    },
+    "OperationBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "op": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer Token": {
+      "type": "apiKey",
+      "description": "Copy 'Bearer ' + valid Bearer Token into field",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

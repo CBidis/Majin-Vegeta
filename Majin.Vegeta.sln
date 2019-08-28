@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{FCCB8CB4-9DE4-47A4-8969-1F1D8B719345}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FCB9512D-BB58-4E95-8B72-D0B0B0F95B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.Open.Api.ParserTests", "Tests\MS.Open.Api.ParserTests\MS.Open.Api.ParserTests.csproj", "{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majin.Vegeta.Transformations", "Majin.Vegeta.Transformations\Majin.Vegeta.Transformations.csproj", "{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Majin.Vegeta.Build", "Majin.Vegeta.Build\Majin.Vegeta.Build.csproj", "{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DE9FD3C1-13C7-4984-A19A-5A2FA8A00003} = {FCB9512D-BB58-4E95-8B72-D0B0B0F95B31}
+		{3CD1BE54-75F9-4FC9-B4C0-A85E4BDE6388} = {FCCB8CB4-9DE4-47A4-8969-1F1D8B719345}
+		{6A659FEE-385D-446A-BC13-BFF6A6A24E0C} = {FCCB8CB4-9DE4-47A4-8969-1F1D8B719345}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DCE4ACA-2EA5-455C-B702-A948BA374D3D}
+	EndGlobalSection
+EndGlobal
